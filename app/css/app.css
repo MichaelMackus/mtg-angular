@@ -1,5 +1,15 @@
 /* app css stylesheet */
 
+.cards { margin: 0; padding: 0; }
+.cards .card {
+  list-style: none; 
+  float: left;
+  margin: 0 10px 10px 0;
+  width: 223px;
+  height: 311px;
+}
+.cards .card .title { display: none; }
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;

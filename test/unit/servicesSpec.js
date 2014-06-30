@@ -3,12 +3,13 @@
 /* jasmine specs for services go here */
 
 describe('service', function() {
-  beforeEach(module('myApp.services'));
+  beforeEach(module('cardsApp.services'));
 
-
-  describe('version', function() {
-    it('should return current version', inject(function(version) {
-      expect(version).toEqual('0.1');
+  describe('Cards', function() {
+    it('check the existence of cards factory', inject(function(Cards) {
+      expect(Cards).toBeDefined();
+      // var cards = Cards.query();
+      // expect(cards.length).toBeGreaterThan(5);
     }));
   });
 });

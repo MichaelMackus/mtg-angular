@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!-- Sidebar content -->
+
+      <form>
+        Search: <input ng-model="q" name="q">
+        <button ng:click="search()">Search</button>
+      </form>
+    </div>
+    <div class="col-md-10">
+      <!-- Body content -->
+
+      <ul class="cards clearfix">
+        <li ng-repeat="card in cards" class="card">
+        <a href="#/cards/{{card.id}}"><img ng-src="http://api.mtgdb.info/content/card_images/{{card.id}}.jpeg" alt="{{card.name}" title="{{card.name}}"></a>
+        <a href="#/cards/{{card.id}}" class="title">{{card.name}}</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>

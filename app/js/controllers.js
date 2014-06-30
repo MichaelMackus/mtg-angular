@@ -2,10 +2,15 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', [])
-  .controller('MyCtrl1', ['$scope', function($scope) {
-
+angular.module('cardsApp.controllers', ['ngRoute'])
+  .controller('CardsSearchCtrl', ['$scope', '$routeParams', '$location', 'Cards', function($scope, $routeParams, $location, Cards) {
+    $scope.search = function() {
+      if ($scope.q) {
+        var query = "name m "+$scope.q;
+        $scope.cards = Cards.query({ method: 'search', q: query });
+      }
+    };
   }])
-  .controller('MyCtrl2', ['$scope', function($scope) {
-
+  .controller('CardsDetailCtrl', ['$scope', '$routeParams', 'Cards', function($scope, $routeParams, Cards) {
+    $scope.card = Cards.get({ query: $routeParams.card });
   }]);
