@@ -6,12 +6,16 @@ angular.module('cardsApp', [
   'ngRoute',
   // 'cardsApp.filters',
   'cardsApp.services',
-  // 'cardsApp.directives',
+  'cardsApp.directives',
   'cardsApp.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider
-  	.when('/cards', {
+  	.when('/', {
+      templateUrl: 'partials/index.html',
+      controller: 'CardsSearchCtrl'
+    })
+  	.when('/search/:query', {
   		templateUrl: 'partials/card-list.html', 
   		controller: 'CardsSearchCtrl'
   	})
@@ -20,6 +24,6 @@ config(['$routeProvider', function($routeProvider) {
       controller: 'CardsDetailCtrl'
     })
   	.otherwise({
-  		redirectTo: '/cards'
+  		redirectTo: '/'
   	});
 }]);

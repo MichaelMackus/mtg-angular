@@ -12,4 +12,12 @@ describe('service', function() {
       // expect(cards.length).toBeGreaterThan(5);
     }));
   });
+
+  describe('_', function() {
+    it('check the existence of underscore factory', inject(function(_) {
+      expect(_).toBeDefined();
+      // var cards = Cards.query();
+      // expect(cards.length).toBeGreaterThan(5);
+    }));
+  });
 });
